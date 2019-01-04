@@ -16,5 +16,6 @@ public abstract class Car {
 	public int getCarNum() {
 		return this.carNum;
 	}
+	public abstract void showInfo();
 
 }

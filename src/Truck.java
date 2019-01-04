@@ -47,8 +47,10 @@ public class Truck extends Car {
 
 	}
 	public String toString() {
+
 		String bName = this.baggage.getName();
 		int bWeight = this.baggage.getWeight();
+
 		return "カーナンバー「"+ this.getCarNum()+"」 荷物名「"+bName+"」重さ　"+bWeight+"kg";
 	}
 
