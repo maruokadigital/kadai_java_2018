@@ -23,8 +23,12 @@ public abstract class Building {
 		return this.name;
 	}
 
+	public String toString() {
+		return "拠点名「"+ this.name +"」";
+	}
+
 	public void showInfo() {
-		System.out.println("拠点名「"+ this.name +"」" );
+		System.out.println(this);
 
 	}
 

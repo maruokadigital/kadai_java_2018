@@ -19,7 +19,7 @@ public class Baggage {
 	}
 	Baggage(boolean exist){
 		this();
-		if(exist) {
+		if(!exist) {
 			setName("空きスペース");
 			setWeight(0);
 			setExist(exist);
@@ -33,11 +33,14 @@ public class Baggage {
 
 
 	//メソッド
+	public boolean isEmpty() {
+		return !this.exist;
+	}
 
 	public void setExist(boolean exist) {
 		this.exist = exist;
 	}
-	public boolean getExist() {
+	public boolean isExist() {
 		return this.exist;
 	}
 	public void setName(String name) {
@@ -55,7 +58,12 @@ public class Baggage {
 	}
 
 	public void showInfo() {
-		System.out.println("荷物の名前「"+ this.name +"」　重さ：" + this.weight+"kg");
+		if(this.isEmpty()) {
+			System.out.println("荷物はありません");
+
+		}else {
+			System.out.println("荷物の名前「"+ this.name +"」　重さ：" + this.weight+"kg");
+		}
 	}
 
 }

@@ -2,6 +2,13 @@
 public abstract class Car {
 	private int carNum;
 
+	Car(int carNum){
+		setCarNum(carNum);
+	}
+	Car(){
+		setCarNum(0);
+	}
+
 
 	public void setCarNum(int carNum) {
 		this.carNum = carNum;
