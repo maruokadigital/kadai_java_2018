@@ -9,11 +9,16 @@ public class Truck extends Car {
 	}
 
 	public void setBaggage(Baggage baggage) {
-		this.baggage =baggage;
+		if(this.baggage.getExist()) {
 
-	}
-	public Baggage getBaggage() {
-		return this.baggage;
+			System.out.println("荷物が既にあります");
+
+		}else {
+			System.out.println("荷物を積みます");
+			this.baggage = baggage;
+
+		}
+
 	}
 	public void showInfo() {
 		String bName = this.baggage.getName();

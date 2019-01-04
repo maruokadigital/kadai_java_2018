@@ -5,24 +5,24 @@ public class Baggage {
 
 	private String name;
 	private int weight;
-	private boolean isEmpty;
+	private boolean exist;
 
 	//コンストラクタ
-	Baggage(String name, int weight,boolean isEmpty){
+	Baggage(String name, int weight,boolean exist){
 		setName(name);
 		setWeight(weight);
-		setIsEmpty(isEmpty);
+		setExist(exist);
 
 	}
 	Baggage(String name, int weight){
 		this(name, weight, true);
 	}
-	Baggage(boolean isEmpty){
+	Baggage(boolean exist){
 		this();
-		if(isEmpty) {
+		if(exist) {
 			setName("空きスペース");
 			setWeight(0);
-			setIsEmpty(isEmpty);
+			setExist(exist);
 		}
 
 	}
@@ -34,11 +34,11 @@ public class Baggage {
 
 	//メソッド
 
-	public void setIsEmpty(boolean isEmpty) {
-		this.isEmpty = isEmpty;
+	public void setExist(boolean exist) {
+		this.exist = exist;
 	}
-	public boolean getIsEmpty() {
-		return this.isEmpty;
+	public boolean getExist() {
+		return this.exist;
 	}
 	public void setName(String name) {
 		this.name = name;
