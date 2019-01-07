@@ -1,19 +1,16 @@
 
-public class CoolTruck extends Truck implements Cooler {
+public class CoolSatelite extends Satelite  implements Cooler {
 	Boolean isCooling=false;
 
-	CoolTruck(){
-		switchCooler(true);
+	CoolSatelite(){
+		this.switchCooler(true);
 	}
-	CoolTruck(int carNum){
-		super(carNum);
-		switchCooler(true);
+	CoolSatelite(String name){
+		super(name);
+		this.switchCooler(true);
 	}
 
 
-
-
-	@Override
 	public boolean isCool() {
 		// TODO 自動生成されたメソッド・スタブ
 		return this.isCooling;
@@ -32,5 +29,6 @@ public class CoolTruck extends Truck implements Cooler {
 		// TODO 自動生成されたメソッド・スタブ
 		return this.isCooling;
 	}
+
 
 }

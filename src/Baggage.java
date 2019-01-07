@@ -6,12 +6,14 @@ public class Baggage {
 	private String name;
 	private int weight;
 	private boolean exist;
+	private boolean needCooler;
 
 	//コンストラクタ
 	Baggage(String name, int weight,boolean exist){
 		setName(name);
 		setWeight(weight);
 		setExist(exist);
+		setNeedCooler(false);
 
 	}
 	Baggage(String name, int weight){
@@ -36,6 +38,16 @@ public class Baggage {
 	public boolean isEmpty() {
 		return !this.exist;
 	}
+	public void setNeedCooler(boolean b) {
+		this.needCooler = b;
+	}
+	public void setNeedCooler() {
+		setNeedCooler(true);
+	}
+	public boolean getNeedCooler() {
+		return this.needCooler;
+	}
+
 
 	public void setExist(boolean exist) {
 		this.exist = exist;
@@ -55,6 +67,34 @@ public class Baggage {
 	}
 	public int getWeight() {
 		return this.weight;
+	}
+	public void anserLoadableOn(Object o) {
+		String mes;
+
+		if(o instanceof CoolTruck) {
+			CoolTruck obj = (CoolTruck)o;
+			if (obj.isCooling) {
+				mes = "可能：カーナンバー「"+obj.getCarNum()+"」に荷物「"+this.name+"」に保存可能";
+			}else {
+				mes = "不可：ナンバー「"+obj.getCarNum()+"」に荷物「"+this.name+"」に保存できません";
+
+			}
+
+		}else if(o instanceof CoolSatelite) {
+			CoolSatelite obj = (CoolSatelite)o;
+			if (obj.isCooling) {
+				mes = "可能：拠点「"+obj.getName()+"」に荷物「"+this.name+"」に保存可能";
+			}else {
+				mes = "不可：拠点「"+obj.getName()+"」に荷物「"+this.name+"」に保存できません";
+
+			}
+
+
+		}else {
+			mes ="不可：この荷物をここに保存できません";
+		}
+
+		System.out.println(mes);
 	}
 
 	public void showInfo() {

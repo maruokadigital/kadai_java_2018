@@ -124,24 +124,59 @@ public class Satelite extends Building {
 		}
 
 	}
-	public String toString() {
-		String truckInfo = ":駐車トラック";
-		String baggageInfo = ":保管荷物";
 
-		if (this.truck.isExist()) {
-			truckInfo +="No."+this.truck.getCarNum();
+	public void showInfo() {
+		String str = "拠点名「"+getName()+"」";
+		if(baggage.isEmpty()) {
+			str += ":荷物はありません";
 		}else {
-			truckInfo +="はありません。";
+			str += ":荷物「" + baggage.getName() + "」";
 		}
-		baggageInfo += this.baggage.isExist()?"「"+this.baggage.getName()+"」":"はありません。";
+		System.out.println(str);
 
+		//showInfo("荷物");
+	}
 
-		return super.toString() + truckInfo + baggageInfo;
+	/*
+	//ここからは上級者向けの工夫です
+	public String toString() {
+
+		return toString(new String[] {}) ;
 		//return super+":駐車トラックNo."++" :保管荷物「"+this.baggage.getName()+"」
 	}
-	public void showInfo() {
-		System.out.println(this);
+	public String toString(String... args) {
+		String truckInfo = "";
+		String baggageInfo = "";
+
+		for(String s:args) {
+			if(s.equals("トラック")||s.equals("駐車場")||s.toLowerCase().equals("truck")||s.toLowerCase().equals("trucks")) {
+				truckInfo = ":駐車トラック";
+				if (this.truck.isExist()) {
+					truckInfo +="No."+this.truck.getCarNum();
+				}else {
+					truckInfo +="はありません。";
+				}
+
+			}
+			if(s.equals("荷物")||s.toLowerCase().equals("baggage")||s.toLowerCase().equals("baggages")) {
+				if(baggage.isEmpty()) {
+					baggageInfo = ":荷物はありません";
+				}else {
+					baggageInfo = ":荷物「" + baggage.getName() + "」";
+				}
+
+			}
+
+
+		}
+
+		return super.toString() + truckInfo + baggageInfo;
 	}
+	public void showInfo(String... args) {
+		System.out.println(toString(args));
+
+	}
+	 */
 
 
 }

@@ -25,14 +25,14 @@ public class Truck extends Car {
 			if (this.baggage.isEmpty()) {
 				return;
 			} else {
-				System.out.println(getCarNum()+"には荷物が既にあります。何もしません");
+				System.out.println("カーナンバー"+getCarNum()+"には荷物が既にあります。何もしません");
 			}
 		} else if (this.baggage.isEmpty()) {
-			System.out.println(getCarNum()+"に荷物を積みます");
+			System.out.println("カーナンバー"+getCarNum()+"に荷物「"+baggage.getName()+"」を積みます");
 			this.baggage = baggage;
 
 		} else {
-			System.out.println(getCarNum()+"には荷物が既にあります。何もしません");
+			System.out.println("カーナンバー"+getCarNum()+"には荷物が既にあります。何もしません");
 		}
 	}
 
