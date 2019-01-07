@@ -68,15 +68,18 @@ public class Baggage {
 	public int getWeight() {
 		return this.weight;
 	}
-	public void anserLoadableOn(Object o) {
+	public boolean anserLoadableOn(Object o) {
 		String mes;
+		boolean answer=false;
 
 		if(o instanceof CoolTruck) {
 			CoolTruck obj = (CoolTruck)o;
 			if (obj.isCooling) {
 				mes = "可能：カーナンバー「"+obj.getCarNum()+"」に荷物「"+this.name+"」に保存可能";
+				answer=true;
 			}else {
 				mes = "不可：ナンバー「"+obj.getCarNum()+"」に荷物「"+this.name+"」に保存できません";
+				answer=false;
 
 			}
 
@@ -84,17 +87,21 @@ public class Baggage {
 			CoolSatelite obj = (CoolSatelite)o;
 			if (obj.isCooling) {
 				mes = "可能：拠点「"+obj.getName()+"」に荷物「"+this.name+"」に保存可能";
+				answer=true;
 			}else {
 				mes = "不可：拠点「"+obj.getName()+"」に荷物「"+this.name+"」に保存できません";
+				answer=false;
 
 			}
 
 
 		}else {
 			mes ="不可：この荷物をここに保存できません";
+			answer=false;
 		}
 
 		System.out.println(mes);
+		return answer;
 	}
 
 	public void showInfo() {
