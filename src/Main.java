@@ -40,7 +40,7 @@ public class Main {
 	}
 	static void runKadai2() {
 		System.out.println("====================================================");
-		System.out.println("=====荷物を手放すメソッドを追加して改良します======");
+		System.out.println("==荷物およびトラックを放出するメソッドを追加して改良します======");
 		System.out.println("====================================================");
 		Baggage tsukue =new Baggage("机",5);
 		Satelite fukui = new Satelite("福井");
@@ -85,22 +85,21 @@ public class Main {
 		System.out.println("========トラックがクール便対応か確認します========");
 		iceCream.anserLoadableOn(truck);
 		iceCream.anserLoadableOn(coolTruck);
-		coolTruck.setBaggage(iceCream);
 
 		System.out.println("========荷物を福井で預かりました========");
 		fukui.setBaggage(iceCream);
-		fukui.setTruck(truck);
-		showAllInfo(fukui,takefu,truck);
+		fukui.setTruck(coolTruck);
+		showAllInfo(fukui,takefu,coolTruck);
 
 
 		System.out.println("========荷物を福井で積載しました========");
-		fukui.sekisai(truck);
-		showAllInfo(fukui,takefu,truck);
+		fukui.sekisai(coolTruck);
+		showAllInfo(fukui,takefu,coolTruck);
 
 		System.out.println("========荷物を武生に届けました========");
 		takefu.setTruck(fukui.releaseTruck());
 		takefu.nioroshi();
-		showAllInfo(fukui,takefu,truck);
+		showAllInfo(fukui,takefu,coolTruck);
 
 		System.out.println("=");
 	}

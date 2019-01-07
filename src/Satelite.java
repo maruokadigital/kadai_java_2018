@@ -65,7 +65,7 @@ public class Satelite extends Building {
 			if(baggage.isEmpty()) {
 				System.out.println(getName() + "でやることは何もありません");
 			}else {
-				System.out.print(getName() + "で荷物「" + baggage.getName() + "」をトラック");
+				System.out.print(getName() + "で");
 				truck.setBaggage(baggage);
 			}
 		}else {
