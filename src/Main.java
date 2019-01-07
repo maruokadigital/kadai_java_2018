@@ -104,7 +104,7 @@ public class Main {
 		System.out.println("=");
 	}
 
-	static void showAllInfo(Satelite a ,Satelite b ,Truck c) {
+	static void showAllInfo(Building a ,Building b ,Car c) {
 		a.showInfo();
 		b.showInfo();
 		c.showInfo();
