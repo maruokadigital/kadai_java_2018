@@ -100,6 +100,14 @@ public class Satelite extends Building {
 		return b;
 
 	}
+	public void nioroshi(Truck truck,Baggage baggage) {
+		if(truck.getBaggage().equals(baggage)) {
+			nioroshi(truck);
+		}else {
+			System.out.println("その荷物「"+baggage.getName() + "」は積まれていません");
+
+		}
+	}
 	public void nioroshi(Truck truck) {
 		if(truck.getBaggage().isEmpty()) {
 			System.out.println("トラックに荷物がないので"+getName() + "でやることは何もありません");
